@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>HUI3</p>
+
+    <p id="data_field"></p>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+    <script>
+        window.onload = Penis;
+        function Penis(){
+
+
+            fetch('/shop/article/34/',{
+                method: 'PUT',
+                body: JSON.stringify({"name":"O_O "+Math.random()*100,"content_mockup": "(_)","category":"1"}),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': Cookies.get('csrftoken')
+                }
+            });
+
+            fetch('/shop/articles/').then((response)=>{
+                response.json().then((data)=>{
+                    el = document.getElementById('data_field')
+                    for(frame of data){
+                        el.append(frame.name + '        ')
+                    }
+                })
+            });
+        }
+        alert('HUI');
+    </script>
+{% endblock %}
