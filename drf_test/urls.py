@@ -19,7 +19,7 @@ from test_shop.views import *
 from drf_auth.views import *
 
 urlpatterns = [
-    path('admen/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('auth/', include('rest_framework.urls')),
     #
     path('shop/', include('test_shop.urls')),
