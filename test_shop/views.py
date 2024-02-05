@@ -32,8 +32,9 @@ class ModelAnusViewSet(ModelViewSet):
 
 class AnusViewSet(ViewSet):
     # permission_classes = (PenisPermission, AnusPermission, )
-    permission_classes = (IsAuthenticated, )
-    authentication_classes = (TokenAuthentication, )
+
+    # permission_classes = (IsAuthenticated, )
+    # authentication_classes = (TokenAuthentication, )
 
     def list(self, request):
         #po fanu
